@@ -1,12 +1,8 @@
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.12)
+project(OpenCL_Tutorial_in_Codes)
 
-project(LearnOpenCL)
-set(CMAKE_BULIE_TYPE RELEASE)
-SET(CMAKE_CXX_FLAGS "-march=native -pthread -O3 -std=c++17")
-
-set(SOURCE_FILE main.cpp)
+set(CMAKE_CXX_STANDARD 17)
 
 find_package(OpenCL REQUIRED)
-
-add_executable(${PROJECT_NAME} ${SOURCE_FILE})
+add_executable(${PROJECT_NAME} main.cpp)
 target_link_libraries(${PROJECT_NAME} OpenCL::OpenCL)

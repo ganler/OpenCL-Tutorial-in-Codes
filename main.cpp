@@ -17,7 +17,6 @@
 // To get cl.hpp for your OpenCL 1.x, just go to https://www.khronos.org/registry/OpenCL/api/2.1/cl.hpp
 
 #include<iostream>
-#include<cassert>
 
 int main()
 {
