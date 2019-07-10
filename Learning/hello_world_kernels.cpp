@@ -4,6 +4,8 @@
 
 /* About the kernel */
 
+#define CL_HPP_TARGET_OPENCL_VERSION 120
+
 #ifdef __APPLE__
 #include <OpenCL/cl.hpp>
 #else
@@ -25,11 +27,11 @@ int main()
     std::vector<cl::Platform> platforms;
     cl::Platform::get(&platforms);
 
-    auto platform = platforms.front();
+    const auto& platform = platforms.front();
     std::vector<cl::Device> devices;
     platform.getDevices(CL_DEVICE_TYPE_ALL, &devices);
 
-    auto device = devices.front();
+    const auto& device = devices.front();
     cl::Context context(device); // Contains the physical devices.(To build context, we need to specify the device.)
 
     /* Specify the kernel */
