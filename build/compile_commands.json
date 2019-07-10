@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/ganler/Desktop/GanlerCodes/LearnOpenCL/build",
+  "command": "/usr/bin/g++-7    -g   -std=gnu++1z -o CMakeFiles/OpenCL_Tutorial_in_Codes.dir/main.cpp.o -c /home/ganler/Desktop/GanlerCodes/LearnOpenCL/main.cpp",
+  "file": "/home/ganler/Desktop/GanlerCodes/LearnOpenCL/main.cpp"
+}
+]

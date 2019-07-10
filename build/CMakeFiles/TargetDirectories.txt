@@ -1,0 +1,3 @@
+/home/ganler/Desktop/GanlerCodes/LearnOpenCL/build/CMakeFiles/rebuild_cache.dir
+/home/ganler/Desktop/GanlerCodes/LearnOpenCL/build/CMakeFiles/OpenCL_Tutorial_in_Codes.dir
+/home/ganler/Desktop/GanlerCodes/LearnOpenCL/build/CMakeFiles/edit_cache.dir

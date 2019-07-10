@@ -1,0 +1,1 @@
+/usr/bin/g++-7  -g   CMakeFiles/OpenCL_Tutorial_in_Codes.dir/main.cpp.o  -o OpenCL_Tutorial_in_Codes /usr/lib/x86_64-linux-gnu/libOpenCL.so 

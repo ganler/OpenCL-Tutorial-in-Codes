@@ -1,0 +1,1 @@
+/usr/bin/g++-7  -march=native -pthread -O3 -std=c++17 -g   CMakeFiles/LearnOpenCL.dir/main.cpp.o  -o LearnOpenCL /usr/lib/x86_64-linux-gnu/libOpenCL.so 

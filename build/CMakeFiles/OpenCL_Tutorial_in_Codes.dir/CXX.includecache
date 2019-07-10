@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ganler/Desktop/GanlerCodes/LearnOpenCL/main.cpp
+OpenCL/cl.hpp
+-
+CL/cl.hpp
+-
+iostream
+-
+string
+-
+vector
+-
+fstream
+-
+sstream
+-
+tuple
+-
+
