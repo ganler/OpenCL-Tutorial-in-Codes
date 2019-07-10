@@ -1,5 +1,3 @@
-#define CL_HPP_TARGET_OPENCL_VERSION 120
-
 #ifdef __APPLE__
 #include <OpenCL/cl.hpp>
 #else
@@ -11,6 +9,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <tuple>
 
 decltype(auto) program_builder(
         const std::string& file_name,
@@ -22,11 +21,10 @@ decltype(auto) program_builder(
     cl::Platform::get(&platforms);
     static std::vector<cl::Device> devices;
 
-    const auto& platform = platforms[Pind];
+    const auto& platform = platforms.at(Pind);
     platform.getDevices(Dev, &devices);
 
-    const auto& device = devices[Dind];
-
+    const auto& device = devices.at(Dind);
     // Build the context.
     cl::Context context(device);
 
@@ -40,18 +38,14 @@ decltype(auto) program_builder(
 
     auto err = program.build("-cl-std=CL1.2");
     if(CL_BUILD_SUCCESS != err)
-        std::cout << "OpenCL -> Build faild.\n";
-    return program;
+        std::cout << "OpenCL -> Build faild. === error code is " << err << '\n';
+    return std::make_tuple(program, context, device);
 }
 
 int main()
 {
-    auto program = program_builder("../kernels/helloworld.cl");
-
     // To execute the program, we need context and device.
-    auto context = program.getInfo<CL_PROGRAM_CONTEXT>();
-    auto devices = context.getInfo<CL_CONTEXT_DEVICES>().front(); // Here we need a copy.
-    auto& device = devices;
+    auto [program, context, device] = program_builder("../kernels/helloworld.cl");
 
     char buff[16];
     cl::Buffer mem_buff(context, CL_MEM_WRITE_ONLY | CL_MEM_HOST_READ_ONLY, sizeof(buff));
